@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sarees - Shubharambh</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<!-- Back Button -->
+<a href="javascript:history.back()" class="back-btn">
+    ← Back
+</a>
+<header></header>
+
+
+<section class="category-page">
+
+<h2>Saree Collection</h2>
+
+<div class="products">
+
+<div class="card">
+    <img src="images/saree1.jpg">
+    <span class="fav-btn">♡</span>
+</div>
+
+<div class="card">
+    <img src="images/saree2.jpg">
+    <span class="fav-btn">♡</span>
+</div>
+
+<div class="card">
+    <img src="images/saree3.jpg">
+    <span class="fav-btn">♡</span>
+</div>
+
+<div class="card">
+    <img src="images/saree4.jpg">
+    <span class="fav-btn">♡</span>
+</div>
+
+<div class="card">
+    <img src="images/saree1.jpg">
+    <span class="fav-btn">♡</span>
+</div>
+
+<div class="card">
+    <img src="images/saree2.jpg">
+    <span class="fav-btn">♡</span>
+</div>
+
+<div class="card">
+    <img src="images/saree3.jpg">
+    <span class="fav-btn">♡</span>
+</div>
+
+<div class="card">
+    <img src="images/saree4.jpg">
+    <span class="fav-btn">♡</span>
+</div>
+
+</div>
+
+</section>
+<div id="fav-panel">
+    <h3>❤️ Favorites</h3>
+    <div id="fav-items"></div>
+</div>
+<footer>
+<p>© 2026 Shubharambh</p>
+</footer>
+<script>
+const favButtons = document.querySelectorAll(".fav-btn");
+const favContainer = document.getElementById("fav-items");
+
+// Load saved favorites
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+renderFavorites();
+
+favButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const imgSrc = btn.previousElementSibling.src;
+
+        if (favorites.includes(imgSrc)) {
+            favorites = favorites.filter(item => item !== imgSrc);
+            btn.classList.remove("active");
+            btn.textContent = "♡";
+        } else {
+            favorites.push(imgSrc);
+            btn.classList.add("active");
+            btn.textContent = "❤️";
+        }
+
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+        renderFavorites();
+    });
+});
+
+function renderFavorites() {
+    favContainer.innerHTML = "";
+    favorites.forEach(src => {
+        const img = document.createElement("img");
+        img.src = src;
+        favContainer.appendChild(img);
+    });
+}
+</script>
+</body>
+</html>

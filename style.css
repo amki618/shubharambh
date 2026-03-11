@@ -1,0 +1,622 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #fff8f6;
+}
+
+/* ===== NAVIGATION BAR ===== */
+
+nav {
+    background: #ffffff;
+    display: flex;
+    align-items: left;
+    gap: 12px;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    padding: 18px 0;
+    z-index: 10;
+
+    background: transparent; /* sits on image */
+}
+
+/* ===== MENU BUTTONS ===== */
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 1px;
+
+    padding: 8px 18px;
+    border-radius: 25px;
+
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.navbar a:hover {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(6px);
+}
+
+/* ===== BACK BUTTON SPECIAL STYLE ===== */
+.nav-back {
+    background: #8b004f;
+    color: #ffffff !important;
+}
+
+/* Back button hover */
+.nav-back:hover {
+    background: #650038;
+}
+
+/* ===== HERO LUXURY BANNER ===== */
+
+.hero {
+    position: relative;
+    min-height: 800px;
+    background: url("./images/hero-bg.jpg") center/cover no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    color: white;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+/* Dark Luxury Overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+/* Text Container (keeps text above overlay) */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+/* Heading Style */
+.hero h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 52px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+/* Subtitle Style */
+.hero p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    opacity: 0.95;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width:768px){
+
+    .hero{
+        height: 65vh;
+    }
+
+    .hero h2{
+        font-size: 32px;
+    }
+
+    .hero p{
+        font-size: 15px;
+    }
+}
+
+/* ===== Gallery Showcase ===== */
+
+.gallery {
+    padding: 60px 40px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.gallery-title {
+    font-family: 'Cinzel', serif;
+    font-size: 32px;
+    color: #8b004f;
+    margin-bottom: 35px;
+}
+
+/* 6 images per row (desktop) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+}
+
+/* Medium image size */
+.gallery-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Hover zoom effect */
+.gallery-grid img:hover {
+    transform: scale(1.07);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Tablet responsive */
+@media (max-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Section Title */
+.section-title {
+    text-align: center;
+    margin: 40px 0 20px;
+    color: #ffffff;
+}
+
+/* ================= PRODUCTS ================= */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px;
+}
+/* ===== COLLECTIONS HERO IMAGE ===== */
+
+.collections-hero {
+    position: relative;
+    min-height: 750px;
+    background: url("./images/collection-bg.jpg") center/cover no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;   /* move content upward */
+
+    text-align: center;
+    color: white;
+    padding-top: 120px;        /* control how high text appears */
+}
+
+/* Dark overlay */
+.collections-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+.collections-content .products {
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Text */
+.collections-content {
+    position: relative;
+    z-index: 2;
+}
+
+.section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 42px;
+    letter-spacing: 2px;
+}
+
+/* Make card clickable */
+.card-link {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
+/* ================= CARD ================= */
+.card {
+    background: rgba(255,255,255,0.9);   /* glass look */
+    backdrop-filter: blur(8px);           /* blur background */
+    width: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    text-align: center;
+
+    transition: 0.35s ease;
+    cursor: pointer;
+}
+
+/* Premium Hover Effect */
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+}
+
+/* ================= IMAGE ================= */
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ================= TITLE ================= */
+.card h3 {
+    padding: 10px;
+    color: #8b004f;
+}
+
+.category-page{
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.category-page h2{
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #8b004f;
+}
+
+/* ================= BACK BUTTON ================= */
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(139, 0, 79, 0.9);
+    color: white;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    z-index: 999;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Hover effect */
+.back-btn:hover {
+    background: #8b004f;
+    transform: translateX(-3px);
+}
+
+/* ===== ABOUT SECTION WITH BACKGROUND IMAGE ===== */
+
+.about {
+    background: url("./images/about-bg.jpg") no-repeat center center/cover;
+    min-height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+    color: white;
+}
+
+/* Dark overlay for readability */
+.about::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+/* Keep text above overlay */
+.about h2,
+.about p {
+    position: relative;
+    z-index: 1;
+}
+
+/* Heading style */
+.about h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 40px;
+    margin-bottom: 60px;
+}
+
+/* Paragraph style */
+.about p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    max-width: 700px;
+    line-height: 1.7;
+}
+
+/* ===== CONTACT PAGE BACKGROUND ===== */
+
+/* ===== CONTACT SECTION ===== */
+
+.contact {
+    background: url("./images/contact-bg.jpg") no-repeat center center/cover;
+    min-height: 550px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+    color: white;
+}
+
+/* Dark overlay */
+.contact::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+/* Content above overlay */
+.contact h2,
+.contact p {
+    position: relative;
+    z-index: 2;
+    background: rgba(255,255,255,0.1);
+    padding: 12px 18px;
+    border-radius: 8px;
+    backdrop-filter: blur(6px);
+    margin: 8px 0;
+}
+
+/* ===== LUXURY CONTACT PAGE ===== */
+
+.contact {
+    background: url("./images/contact-bg.jpg") no-repeat center center/cover;
+    padding: 100px 20px;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.contact::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+}
+
+/* Glass Card */
+.contact-card {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+    margin: auto;
+    padding: 40px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+}
+
+/* Heading */
+.contact-card h2 {
+    font-family: 'Cinzel', serif;
+    margin-bottom: 25px;
+    font-size: 36px;
+}
+
+/* Contact row layout */
+.contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.1);
+    padding: 15px 18px;
+    border-radius: 10px;
+    margin: 12px 0;
+}
+
+/* Left side (icon + text) */
+.contact-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+}
+
+.contact-left i {
+    font-size: 20px;
+}
+
+/* Side buttons */
+.side-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.side-btn.call {
+    background: #28a745;
+}
+
+.side-btn.call:hover {
+    transform: scale(1.1);
+    background: #1f7a34;
+}
+
+.side-btn.email {
+    background: #8b004f;
+}
+
+.side-btn.email:hover {
+    transform: scale(1.1);
+    background: #6a003b;
+}
+
+/* WhatsApp button */
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: #25D366;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-3px);
+    background: #1ebe5d;
+}
+
+/* Map */
+.map {
+    margin-top: 50px;
+    position: relative;
+    z-index: 2;
+}
+
+.map iframe {
+    width: 100%;
+    height: 420px;
+    border: 0;
+}
+
+/* Footer */
+footer {
+    background: #8b004f;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+/* ===== FAVORITE BUTTON ===== */
+.card{
+    position: relative;
+}
+
+/* ================= FAVORITE HEART BUTTON ================= */
+
+.fav-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 50;
+
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    padding: 6px 10px;
+
+    cursor: pointer;
+    font-size: 18px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+}
+
+/* Hover effect */
+.fav-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Active favorite */
+.fav-btn.active {
+    color: red;
+}
+
+/* Heart animation */
+.fav-btn.pop {
+    animation: heartPop 0.35s ease;
+}
+
+@keyframes heartPop {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.4); }
+    100% { transform: scale(1); }
+}
+
+
+/* ================= FAVORITES SIDE PANEL ================= */
+
+#fav-panel {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    width: 180px;
+    background: rgba(117,115,115,0.18);
+
+    padding-top: 10px;
+
+    box-shadow: -3px 0 12px rgba(0,0,0,0.2);
+    border-radius: 12px;
+
+    max-height: 70vh;
+    overflow-y: auto;
+
+    z-index: 999;
+}
+
+/* Slide effect */
+#fav-panel:hover {
+    transform: translateX(-6px);
+}
+
+/* Panel title */
+#fav-panel h3 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 12px;
+    font-family: 'Cinzel', serif;
+}
+
+/* Favorite images */
+#fav-items img {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
