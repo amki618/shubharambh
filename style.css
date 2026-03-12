@@ -604,32 +604,32 @@ background:url("images/cordset.png") center/cover no-repeat;
 /* Instagram Button */
 
 .instagram-btn{
-display:inline-flex;
-align-items:center;
-gap:10px;
+   display:inline-flex;
+   align-items:center;
+   gap:10px;
 
-margin-top:15px;
-padding:12px 22px;
+   margin-top:15px;
+   padding:12px 22px;
 
-background:#E1306C;
-color:white;
+   background:#E1306C;
+   color:white;
 
-font-family:'Poppins',sans-serif;
-text-decoration:none;
+   font-family:'Poppins',sans-serif;
+   text-decoration:none;
 
-border-radius:25px;
-font-size:15px;
+   border-radius:25px;
+   font-size:15px;
 
-transition:0.3s;
+   transition:0.3s;
 }
 
 .instagram-btn i{
-font-size:18px;
+   font-size:18px;
 }
 
 .instagram-btn:hover{
-background:#c0255c;
-transform:translateY(-2px);
+   background:#c0255c;
+   transform:translateY(-2px);
 }
 
 /* Map */
