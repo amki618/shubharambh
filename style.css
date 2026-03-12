@@ -322,7 +322,7 @@ nav {
 
 .about {
     background: url("./images/about-bg.jpg") no-repeat center center/cover;
-    min-height: 500px;
+    min-height: 900px;
 
     display: flex;
     flex-direction: column;
@@ -371,7 +371,7 @@ nav {
 
 .contact {
     background: url("./images/contact-bg.jpg") no-repeat center center/cover;
-    min-height: 550px;
+    min-height: 700px;
 
     display: flex;
     flex-direction: column;
