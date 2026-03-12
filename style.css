@@ -14,25 +14,29 @@ body {
 nav {
     background: #ffffff;
     display: flex;
-    align-items: left;
+    align-items: center;
     gap: 12px;
     padding: 10px;
     flex-wrap: wrap;
 }
+
 .navbar {
     position: absolute;
     top: 0;
     left: 0;
-    width: 60%;
+    width: 100%;              /* full screen width */
+    box-sizing: border-box;   /* include padding in width */
 
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 20px;
+    flex-wrap: wrap;
 
-    padding: 18px 0;
+    padding: 18px 20px;
     z-index: 10;
 
-    background: transparent; /* sits on image */
+    background: transparent;
 }
 
 /* ===== MENU BUTTONS ===== */
@@ -62,9 +66,18 @@ nav {
     color: #ffffff !important;
 }
 
-/* Back button hover */
-.nav-back:hover {
-    background: #650038;
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 10px;
+    }
+
+    .navbar a {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
 }
 
 /* ===== HERO LUXURY BANNER ===== */
