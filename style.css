@@ -620,3 +620,35 @@ footer {
     margin-bottom: 10px;
     border-radius: 8px;
 }
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:12px 30px;
+    background:#ffccd5;
+}
+
+/* Back button */
+.back-btn{
+    text-decoration:none;
+    font-family:'Poppins',sans-serif;
+    color:#8b004f;
+    font-weight:500;
+}
+
+/* Favorites button */
+.fav-nav{
+    background:#8b004f;
+    color:white;
+    padding:8px 16px;
+    border-radius:20px;
+    text-decoration:none;
+    font-family:'Poppins',sans-serif;
+    transition:0.3s;
+}
+
+.fav-nav:hover{
+    background:#650038;
+}
