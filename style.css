@@ -364,22 +364,22 @@ nav {
     line-height: 1.4;
 }
 .saree-page{
-background:url("images/saree.png") center/cover no-repeat;
+   background:url("images/saree.png") center/cover no-repeat;
 }
 .dress-page{
-background:url("images/dress.png") center/cover no-repeat;
+   background:url("images/dress.png") center/cover no-repeat;
 }
 .anarkali-page{
-background:url("images/anarkali.png") center/cover no-repeat;
+   background:url("images/anarkali.png") center/cover no-repeat;
 }
 .lehenga-page{
-background:url("images/lehenga.png") center/cover no-repeat;
+   background:url("images/lehenga.png") center/cover no-repeat;
 }
 .kurti-page{
-background:url("images/kurti.png") center/cover no-repeat;
+   background:url("images/kurti.png") center/cover no-repeat;
 }
 .cordset-page{
-background:url("images/cordset.png") center/cover no-repeat;
+   background:url("images/cordset.png") center/cover no-repeat;
 }
 
 /* ================= BACK BUTTON ================= */
