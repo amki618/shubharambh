@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -149,7 +150,7 @@ nav {
 /* ===== Gallery Showcase ===== */
 
 .gallery {
-    padding: 60px 40px;
+    padding: 40px 20px;
     background: #ffccd5;
     text-align: center;
 }
@@ -168,11 +169,12 @@ nav {
     gap: 18px;
 }
 
-/* Medium image size */
+/* Medium image size with 9:16 ratio */
 .gallery-grid img {
     width: 100%;
-    height: 220px;
+    aspect-ratio: 9 / 16;   /* keeps correct portrait ratio */
     object-fit: cover;
+
     border-radius: 10px;
     transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
@@ -297,15 +299,87 @@ nav {
     color: #8b004f;
 }
 
+/* ===== CATEGORY PAGE BACKGROUND ===== */
+
 .category-page{
-    padding: 60px 20px;
+    position: relative;
+    min-height: 100vh;
+    padding: 120px 40px;
+
+    background: url("./images/category-bg.jpg") center/cover no-repeat;
+
     text-align: center;
 }
 
+/* ===== CATEGORY PAGE TITLE ===== */
+
 .category-page h2{
-    font-size: 36px;
-    margin-bottom: 30px;
-    color: #8b004f;
+    position: relative;      /* required for z-index */
+    z-index: 3;              /* above blur layer */
+
+    font-family: 'Cinzel', serif;
+    font-size: 32px;
+    font-weight: 500;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: #ffffff;
+
+    margin-bottom: 40px;
+
+    padding: 6px 18px;
+
+    border-radius: 8px;
+
+    display: inline-block;
+
+    text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+}
+
+/* ===== BLUR BACKGROUND ===== */
+
+.category-page::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background: rgba(0,0,0,0.45);
+
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(6px);
+
+    z-index: 1;
+}
+.category-page .products{
+    position: relative;
+    z-index: 2;
+}
+.card-desc{
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: #000000;
+    padding: 8px 10px 14px;
+    text-align: center;
+    line-height: 1.4;
+}
+.saree-page{
+background:url("images/saree.png") center/cover no-repeat;
+}
+.dress-page{
+background:url("images/dress.png") center/cover no-repeat;
+}
+.anarkali-page{
+background:url("images/anarkali.png") center/cover no-repeat;
+}
+.lehenga-page{
+background:url("images/lehenga.png") center/cover no-repeat;
+}
+.kurti-page{
+background:url("images/kurti.png") center/cover no-repeat;
+}
+.cordset-page{
+background:url("images/cordset.png") center/cover no-repeat;
 }
 
 /* ================= BACK BUTTON ================= */
