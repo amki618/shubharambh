@@ -203,7 +203,7 @@ nav {
 
 .collections-hero {
     position: relative;
-    min-height: 750px;
+    min-height: 990px;
     background: url("./images/collection-bg.jpg") center/cover no-repeat;
 
     display: flex;
