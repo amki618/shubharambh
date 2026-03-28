@@ -53,7 +53,18 @@
     </div>
 </section>
 
-<script>
+<!-- Gallery Showcase -->
+<section class="gallery">
+    <div id="gallery-grid" class="gallery-grid"></div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 Shubharambh | All Rights Reserved</p>
+</footer>
+
+<script src="script.js"></script>
+        <script>
 fetch("data/products.json")
 .then(response => response.json())
 .then(products => {
@@ -72,13 +83,6 @@ gallery.appendChild(img);
 })
 .catch(error => console.error("Error loading gallery:", error));
 </script>
-
-<!-- Footer -->
-<footer>
-    <p>© 2026 Shubharambh | All Rights Reserved</p>
-</footer>
-
-<script src="script.js"></script>
 </body>
 
 </html>
