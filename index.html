@@ -53,35 +53,25 @@
     </div>
 </section>
 
-<!-- Gallery Showcase -->
-<section class="gallery">
-    <div class="gallery-grid">
-        <img src="images/DD/DDD23.jpeg">
-        <img src="images/AKAK/AKAK2.jpeg">
-        <img src="images/LL/LLL3.jpeg">
-        <img src="images/DD/DDD17.jpeg">
-        <img src="images/CSCS/CSCS2.jpeg">
-        <img src="images/DD/DDD12.jpeg">
-        <img src="images/LL/LLL1.jpeg">
-        <img src="images/CSCS/CSCS5.jpeg">
-        <img src="images/CSCS/CSCS7.jpeg">
-        <img src="images/AKAK/AKAK1.jpeg">
-        <img src="images/DD/DDD2.jpeg">
-        <img src="images/CSCS/CSCS3.jpeg">
-        <img src="images/DD/DDD19.jpeg">
-        <img src="images/DD/DDD18.jpeg">
-        <img src="images/LL/LLL2.jpeg">
-        <img src="images/DD/DDD15.jpeg">
-        <img src="images/CSCS/CSCS1.jpeg">
-        <img src="images/CSCS/CSCS4.jpeg">
-        <img src="images/DD/DDD9.jpeg">
-        <img src="images/DD/DDD5.jpeg">
-        <img src="images/DD/DDD3.jpeg">
-        <img src="images/CSCS/CSCS6.jpeg">
-        <img src="images/DD/DDD1.jpeg">
-        <img src="images/DD/DDD21.jpeg">
-    </div>
-</section>
+<script>
+fetch("data/products.json")
+.then(response => response.json())
+.then(products => {
+
+const gallery = document.getElementById("gallery-grid");
+
+products.forEach(product => {
+
+const img = document.createElement("img");
+img.src = product.image;
+
+gallery.appendChild(img);
+
+});
+
+})
+.catch(error => console.error("Error loading gallery:", error));
+</script>
 
 <!-- Footer -->
 <footer>
