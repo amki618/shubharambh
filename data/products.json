@@ -1,107 +1,106 @@
 [
-{
-"category":"Sarees",
-"image":"images/saree1.jpg"
-},
-{
-"category":"Sarees",
-"image":"images/saree2.jpg"
-},
-{
-"category":"Sarees",
-"image":"images/saree3.jpg"
-},
-{
-"category":"Sarees",
-"image":"images/saree4.jpg"
-},
+  {
+    "category": "Sarees",
+    "image": "images/saree1.jpg"
+  },
+  {
+    "category": "Sarees",
+    "image": "images/saree2.jpg"
+  },
+  {
+    "category": "Sarees",
+    "image": "images/saree3.jpg"
+  },
+  {
+    "category": "Sarees",
+    "image": "images/saree4.jpg"
+  },
 
-{
-"category":"Dresses",
-"image":"images/DD/DDD1.jpeg"
-},
-{
-"category":"Dresses",
-"image":"images/DD/DDD2.jpeg"
-},
-{
-"category":"Dresses",
-"image":"images/DD/DDD3.jpeg"
-},
-{
-"category":"Dresses",
-"image":"images/DD/DDD4.jpeg"
-},
+  {
+    "category": "Dresses",
+    "image": "images/DD/DDD1.jpeg"
+  },
+  {
+    "category": "Dresses",
+    "image": "images/DD/DDD2.jpeg"
+  },
+  {
+    "category": "Dresses",
+    "image": "images/DD/DDD3.jpeg"
+  },
+  {
+    "category": "Dresses",
+    "image": "images/DD/DDD4.jpeg"
+  },
 
-{
-"category":"Lehengas",
-"image":"images/LL/LLL1.jpeg"
-},
-{
-"category":"Lehengas",
-"image":"images/LL/LLL2.jpeg"
-},
-{
-"category":"Lehengas",
-"image":"images/LL/LLL3.jpeg"
-},
-{
-"category":"Lehengas",
-"image":"images/LL/LLL4.jpeg"
-},
+  {
+    "category": "Lehengas",
+    "image": "images/LL/LLL1.jpeg"
+  },
+  {
+    "category": "Lehengas",
+    "image": "images/LL/LLL2.jpeg"
+  },
+  {
+    "category": "Lehengas",
+    "image": "images/LL/LLL3.jpeg"
+  },
+  {
+    "category": "Lehengas",
+    "image": "images/LL/LLL4.jpeg"
+  },
 
-{
-"category":"Anarkalis",
-"image":"images/AKAK/AKAK1.jpeg"
-},
-{
-"category":"Anarkalis",
-"image":"images/AKAK/AKAK2.jpeg"
-},
-{
-"category":"Anarkalis",
-"image":"images/AKAK/AKAK3.jpeg"
-},
-{
-"category":"Anarkalis",
-"image":"images/AKAK/AKAK4.jpeg"
-},
+  {
+    "category": "Anarkalis",
+    "image": "images/AKAK/AKAK1.jpeg"
+  },
+  {
+    "category": "Anarkalis",
+    "image": "images/AKAK/AKAK2.jpeg"
+  },
+  {
+    "category": "Anarkalis",
+    "image": "images/AKAK/AKAK3.jpeg"
+  },
+  {
+    "category": "Anarkalis",
+    "image": "images/AKAK/AKAK4.jpeg"
+  },
 
-{
-"category":"Kurtis",
-"image":"images/kurti1.jpg"
-},
-{
-"category":"Kurtis",
-"image":"images/kurti2.jpg"
-},
-{
-"category":"Kurtis",
-"image":"images/kurti3.jpg"
-},
-{
-"category":"Kurtis",
-"image":"images/kurti4.jpg"
-},
+  {
+    "category": "Kurtis",
+    "image": "images/kurti1.jpg"
+  },
+  {
+    "category": "Kurtis",
+    "image": "images/kurti2.jpg"
+  },
+  {
+    "category": "Kurtis",
+    "image": "images/kurti3.jpg"
+  },
+  {
+    "category": "Kurtis",
+    "image": "images/kurti4.jpg"
+  },
 
-{
-"category":"Cord Sets",
-"image":"images/CSCS/CSCS1.jpeg"
-},
-{
-"category":"Cord Sets",
-"image":"images/CSCS/CSCS2.jpeg"
-},
-{
-"category":"Cord Sets",
-"image":"images/CSCS/CSCS3.jpeg"
-},
-{
-"category":"Cord Sets",
-"image":"images/CSCS/CSCS4.jpeg"
-}
-]
-[
+  {
+    "category": "Cord Sets",
+    "image": "images/CSCS/CSCS1.jpeg"
+  },
+  {
+    "category": "Cord Sets",
+    "image": "images/CSCS/CSCS2.jpeg"
+  },
+  {
+    "category": "Cord Sets",
+    "image": "images/CSCS/CSCS3.jpeg"
+  },
+  {
+    "category": "Cord Sets",
+    "image": "images/CSCS/CSCS4.jpeg"
+  },
+
   {
     "category": "Dresses",
     "image": "images/DD/DDD23.jpeg"
