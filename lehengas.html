@@ -88,9 +88,7 @@ fetch("data/products.json")
         card.innerHTML = `
             <img src="${product.image}" alt="${product.name}">
             <span class="fav-btn">♡</span>
-            <h3>${product.name}</h3>
-            <p>₹${product.price}</p>
-            <p>${product.description}</p>
+
         `;
 
         container.appendChild(card);
