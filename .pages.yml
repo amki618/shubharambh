@@ -1,0 +1,27 @@
+media:
+  input: images/uploads
+  output: /images/uploads
+
+content:
+  - name: products
+    label: Products
+    type: file
+    path: data/products.json
+    format: json
+    list: true
+    fields:
+      - name: name
+        label: Product Name
+        type: string
+      - name: price
+        label: Price
+        type: string
+      - name: category
+        label: Category
+        type: string
+      - name: image
+        label: Image
+        type: image
+      - name: description
+        label: Description
+        type: text
