@@ -24,6 +24,7 @@
  "logo": "https://shubharambh.shop/images/logo.png"
 }
 </script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
     
     <body>
@@ -81,6 +82,17 @@ gallery.appendChild(img);
 
 })
 .catch(error => console.error("Error loading gallery:", error));
+</script>
+        <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
 </script>
 </body>
 
