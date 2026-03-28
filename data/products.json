@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Pink Silk Saree",
+    "price": "2499",
+    "category": "Sarees",
+    "image": "images/uploads/pink-saree.jpg",
+    "description": "Elegant festive saree"
+  },
+  {
+    "name": "Floral Kurti",
+    "price": "999",
+    "category": "Kurtis",
+    "image": "images/uploads/floral-kurti.jpg",
+    "description": "Comfortable daily wear"
+  },
+  {
+    "name": "Party Lehenga",
+    "price": "3999",
+    "category": "Lehengas",
+    "image": "images/uploads/party-lehenga.jpg",
+    "description": "Designer lehenga for special occasions"
+  }
+]
