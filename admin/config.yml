@@ -8,29 +8,25 @@ public_folder: "/images"
 collections:
   - name: "products"
     label: "Products"
-    files:
-      - file: "data/products.json"
-        label: "Products List"
+    file: "data/products.json"
+    format: "json"
+    fields:
+      - label: "Products"
         name: "products"
-        format: "json"
-        editor:
-          preview: false
+        widget: "list"
+        summary: "{{fields.category}}"
         fields:
-          - label: "Products"
-            name: ""
-            widget: "list"
-            summary: "{{fields.category}}"
-            fields:
-              - label: Category
-                name: category
-                widget: select
-                options:
-                  - Sarees
-                  - Dresses
-                  - Lehengas
-                  - Anarkalis
-                  - Kurtis
-                  - Cord Sets
-              - label: Image
-                name: image
-                widget: image
+          - label: Category
+            name: category
+            widget: select
+            options:
+              - Sarees
+              - Dresses
+              - Lehengas
+              - Anarkalis
+              - Kurtis
+              - Cord Sets
+
+          - label: Image
+            name: image
+            widget: image
