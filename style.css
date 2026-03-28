@@ -738,4 +738,14 @@ footer {
     margin-bottom: 10px;
     border-radius: 8px;
 }
+.card h3 {
+  margin-top: 10px;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+}
 
+.card p {
+  margin: 5px 0;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+}
