@@ -1,6 +1,7 @@
 backend:
   name: github
-  repo: amki618/amki618   # your github repo
+  repo: amki618/shubharambh
+  branch: main
 
 media_folder: "images"
 public_folder: "/images"
@@ -17,5 +18,5 @@ collections:
             name: "products"
             widget: "list"
             fields:
-              - {label: "Category", name: "category", widget: "string"}
-              - {label: "Image", name: "image", widget: "image"}
+              - { label: "Category", name: "category", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
