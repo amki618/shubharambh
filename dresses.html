@@ -11,106 +11,90 @@
 
 <body>
 
-<!-- Back Button -->
 <a href="javascript:history.back()" class="back-btn">← Back</a>
 
 <header></header>
 
 <section class="category-page dress-page">
-
-<h2>Dresses Collection</h2>
-
-<div id="product-list" class="products"></div>
-
+    <h2>Dresses Collection</h2>
+    <div id="product-list" class="products"></div>
 </section>
 
 <a href="favorites.html" id="fav-panel">
-<h3>❤️ Favorites</h3>
-<div id="fav-items"></div>
+    <h3>❤️ Favorites</h3>
+    <div id="fav-items"></div>
 </a>
 
 <footer>
-<p>© 2026 Shubharambh</p>
+    <p>© 2026 Shubharambh</p>
 </footer>
 
 <script>
-
 const favContainer = document.getElementById("fav-items");
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-function renderFavorites(){
+function renderFavorites() {
     favContainer.innerHTML = "";
-    favorites.forEach(src=>{
+    favorites.forEach(src => {
         const img = document.createElement("img");
         img.src = src;
         favContainer.appendChild(img);
     });
 }
 
-function updateFavoriteButtons(){
+function updateFavoriteButtons() {
+    document.querySelectorAll(".fav-btn").forEach(btn => {
+        const imgSrc = btn.previousElementSibling.src;
 
-document.querySelectorAll(".fav-btn").forEach(btn=>{
+        if (favorites.includes(imgSrc)) {
+            btn.classList.add("active");
+            btn.textContent = "❤️";
+        } else {
+            btn.classList.remove("active");
+            btn.textContent = "♡";
+        }
 
-const imgSrc = btn.previousElementSibling.src;
+        btn.addEventListener("click", () => {
+            if (favorites.includes(imgSrc)) {
+                favorites = favorites.filter(item => item !== imgSrc);
+                btn.classList.remove("active");
+                btn.textContent = "♡";
+            } else {
+                favorites.push(imgSrc);
+                btn.classList.add("active");
+                btn.textContent = "❤️";
+            }
 
-if(favorites.includes(imgSrc)){
-    btn.classList.add("active");
-    btn.textContent="❤️";
-}else{
-    btn.classList.remove("active");
-    btn.textContent="♡";
-}
-
-btn.addEventListener("click",()=>{
-
-if(favorites.includes(imgSrc)){
-    favorites = favorites.filter(item=>item!==imgSrc);
-    btn.classList.remove("active");
-    btn.textContent="♡";
-}else{
-    favorites.push(imgSrc);
-    btn.classList.add("active");
-    btn.textContent="❤️";
-}
-
-localStorage.setItem("favorites",JSON.stringify(favorites));
-renderFavorites();
-
-});
-
-});
-
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+            renderFavorites();
+        });
+    });
 }
 
 fetch("data/products.json")
-.then(response=>response.json())
-.then(products=>{
+.then(response => response.json())
+.then(products => {
+    const container = document.getElementById("product-list");
+    container.innerHTML = "";
 
-const container=document.getElementById("product-list");
+    const dresses = products.filter(product => product.category === "Dresses");
 
-const dresses = products.filter(product=>product.category==="Dresses");
+    dresses.forEach(product => {
+        const card = document.createElement("div");
+        card.className = "card";
 
-dresses.forEach(product=>{
+        card.innerHTML = `
+            <img src="${product.image}" alt="Dress">
+            <span class="fav-btn">♡</span>
+        `;
 
-const card=document.createElement("div");
-card.className="card";
+        container.appendChild(card);
+    });
 
-card.innerHTML=`
-<img src="${product.image}" alt="${product.name}">
-<span class="fav-btn">♡</span>
-
-`;
-
-container.appendChild(card);
-
-});
-
-updateFavoriteButtons();
-renderFavorites();
-
+    updateFavoriteButtons();
+    renderFavorites();
 })
-.catch(error=>console.error("Error loading dresses:",error));
-
+.catch(error => console.error("Error loading dresses:", error));
 </script>
 
 </body>
