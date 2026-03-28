@@ -62,8 +62,8 @@
 <footer>
     <p>© 2026 Shubharambh | All Rights Reserved</p>
 </footer>
-        <script>
-fetch("data/products.json")
+<script>
+fetch("./data/products.json")
 .then(response => response.json())
 .then(products => {
 
@@ -73,6 +73,7 @@ products.forEach(product => {
 
 const img = document.createElement("img");
 img.src = product.image;
+img.alt = "Shubharambh clothing";
 
 gallery.appendChild(img);
 
