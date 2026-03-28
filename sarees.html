@@ -1,131 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sarees - Shubharambh</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sarees - Shubharambh</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<!-- Back Button -->
-<a href="javascript:history.back()" class="back-btn">
-    ← Back
-</a>
-<header></header>
 
-<section class="category-page saree-page">
+  <!-- Back Button -->
+  <a href="javascript:history.back()" class="back-btn">← Back</a>
 
-<h2>Sarees Collection</h2>
+  <header></header>
 
-<div class="products">
+  <section class="category-page saree-page">
+    <h2>Sarees Collection</h2>
 
-<div class="card">
-    <img src="imagess/saree1.jpg">
-    <span class="fav-btn">♡</span>
-</div>
+    <div id="product-list" class="products"></div>
+  </section>
 
-<div class="card">
-    <img src="imagess/saree2.jpg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/saree3.jpg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/saree4.jpg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/saree1.jpg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/saree2.jpg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/saree3.jpg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/saree4.jpg">
-    <span class="fav-btn">♡</span>
-</div>
-<div class="card">
-    <img src="imagess/saree1.jpg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/saree2.jpg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/saree3.jpg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/saree4.jpg">
-    <span class="fav-btn">♡</span>
-</div>
-
-</div>
-
-</section>
-<div id="fav-panel">
+  <div id="fav-panel">
     <h3>❤️ Favorites</h3>
     <div id="fav-items"></div>
-</div>
-<footer>
-<p>© 2026 Shubharambh</p>
-</footer>
-<script>
-const favButtons = document.querySelectorAll(".fav-btn");
-const favContainer = document.getElementById("fav-items");
+  </div>
 
-// Load saved favorites
-let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-renderFavorites();
+  <footer>
+    <p>© 2026 Shubharambh</p>
+  </footer>
 
-favButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-        const imgSrc = btn.previousElementSibling.src;
+  <script>
+    const favContainer = document.getElementById("fav-items");
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-        if (favorites.includes(imgSrc)) {
-            favorites = favorites.filter(item => item !== imgSrc);
-            btn.classList.remove("active");
-            btn.textContent = "♡";
-        } else {
-            favorites.push(imgSrc);
-            btn.classList.add("active");
-            btn.textContent = "❤️";
-        }
-
-        localStorage.setItem("favorites", JSON.stringify(favorites));
-        renderFavorites();
-    });
-});
-
-function renderFavorites() {
-    favContainer.innerHTML = "";
-    favorites.forEach(src => {
+    function renderFavorites() {
+      favContainer.innerHTML = "";
+      favorites.forEach(src => {
         const img = document.createElement("img");
         img.src = src;
         favContainer.appendChild(img);
-    });
-}
-</script>
+      });
+    }
+
+    function updateFavoriteButtons() {
+      document.querySelectorAll(".fav-btn").forEach(btn => {
+        const imgSrc = btn.previousElementSibling.src;
+
+        if (favorites.includes(imgSrc)) {
+          btn.classList.add("active");
+          btn.textContent = "❤️";
+        } else {
+          btn.classList.remove("active");
+          btn.textContent = "♡";
+        }
+
+        btn.addEventListener("click", () => {
+          if (favorites.includes(imgSrc)) {
+            favorites = favorites.filter(item => item !== imgSrc);
+            btn.classList.remove("active");
+            btn.textContent = "♡";
+          } else {
+            favorites.push(imgSrc);
+            btn.classList.add("active");
+            btn.textContent = "❤️";
+          }
+
+          localStorage.setItem("favorites", JSON.stringify(favorites));
+          renderFavorites();
+        });
+      });
+    }
+
+    fetch('data/products.json')
+      .then(response => response.json())
+      .then(products => {
+        const container = document.getElementById('product-list');
+        const sarees = products.filter(product => product.category === 'Sarees');
+
+        sarees.forEach(product => {
+          const card = document.createElement('div');
+          card.className = 'card';
+
+          card.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <span class="fav-btn">♡</span>
+            <h3>${product.name}</h3>
+            <p>₹${product.price}</p>
+            <p>${product.description}</p>
+          `;
+
+          container.appendChild(card);
+        });
+
+        updateFavoriteButtons();
+        renderFavorites();
+      })
+      .catch(error => console.error('Error loading sarees:', error));
+  </script>
+
 </body>
 </html>
