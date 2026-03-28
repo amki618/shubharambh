@@ -1,23 +1,175 @@
 [
-  {
-    "name": "Pink Silk Saree",
-    "price": "2499",
-    "category": "Sarees",
-    "image": "images/uploads/pink-saree.jpg",
-    "description": "Elegant festive saree"
-  },
-  {
-    "name": "Floral Kurti",
-    "price": "999",
-    "category": "Kurtis",
-    "image": "images/uploads/floral-kurti.jpg",
-    "description": "Comfortable daily wear"
-  },
-  {
-    "name": "Party Lehenga",
-    "price": "3999",
-    "category": "Lehengas",
-    "image": "images/uploads/party-lehenga.jpg",
-    "description": "Designer lehenga for special occasions"
-  }
+{
+"name":"Classic Silk Saree",
+"price":"2499",
+"category":"Sarees",
+"image":"imagess/saree1.jpg",
+"description":"Elegant silk saree perfect for festive occasions"
+},
+{
+"name":"Banarasi Saree",
+"price":"3299",
+"category":"Sarees",
+"image":"imagess/saree2.jpg",
+"description":"Traditional Banarasi weave with rich texture"
+},
+{
+"name":"Printed Saree",
+"price":"1899",
+"category":"Sarees",
+"image":"imagess/saree3.jpg",
+"description":"Lightweight printed saree for casual wear"
+},
+{
+"name":"Designer Saree",
+"price":"3599",
+"category":"Sarees",
+"image":"imagess/saree4.jpg",
+"description":"Modern designer saree with elegant finish"
+},
+
+{
+"name":"Floral Dress",
+"price":"1499",
+"category":"Dresses",
+"image":"imagess/DD/DDD1.jpeg",
+"description":"Stylish floral dress for everyday wear"
+},
+{
+"name":"Summer Dress",
+"price":"1599",
+"category":"Dresses",
+"image":"imagess/DD/DDD2.jpeg",
+"description":"Light and comfortable summer dress"
+},
+{
+"name":"Party Dress",
+"price":"1999",
+"category":"Dresses",
+"image":"imagess/DD/DDD3.jpeg",
+"description":"Perfect party wear dress with elegant style"
+},
+{
+"name":"Casual Dress",
+"price":"1299",
+"category":"Dresses",
+"image":"imagess/DD/DDD4.jpeg",
+"description":"Comfortable dress for daily wear"
+},
+
+{
+"name":"Bridal Lehenga",
+"price":"4999",
+"category":"Lehengas",
+"image":"imagess/LL/LLL1.jpeg",
+"description":"Heavy bridal lehenga for weddings"
+},
+{
+"name":"Festive Lehenga",
+"price":"3899",
+"category":"Lehengas",
+"image":"imagess/LL/LLL2.jpeg",
+"description":"Festive lehenga for celebrations"
+},
+{
+"name":"Designer Lehenga",
+"price":"4599",
+"category":"Lehengas",
+"image":"imagess/LL/LLL3.jpeg",
+"description":"Designer lehenga with elegant embroidery"
+},
+{
+"name":"Traditional Lehenga",
+"price":"4199",
+"category":"Lehengas",
+"image":"imagess/LL/LLL4.jpeg",
+"description":"Traditional lehenga perfect for events"
+},
+
+{
+"name":"Royal Anarkali",
+"price":"2999",
+"category":"Anarkalis",
+"image":"imagess/AKAK/AKAK1.jpeg",
+"description":"Elegant royal style anarkali suit"
+},
+{
+"name":"Festive Anarkali",
+"price":"2799",
+"category":"Anarkalis",
+"image":"imagess/AKAK/AKAK2.jpeg",
+"description":"Beautiful festive wear anarkali"
+},
+{
+"name":"Designer Anarkali",
+"price":"3199",
+"category":"Anarkalis",
+"image":"imagess/AKAK/AKAK3.jpeg",
+"description":"Designer anarkali with embroidery"
+},
+{
+"name":"Traditional Anarkali",
+"price":"2599",
+"category":"Anarkalis",
+"image":"imagess/AKAK/AKAK4.jpeg",
+"description":"Traditional anarkali suit"
+},
+
+{
+"name":"Cotton Kurti",
+"price":"899",
+"category":"Kurtis",
+"image":"imagess/kurti1.jpg",
+"description":"Comfortable cotton kurti for daily wear"
+},
+{
+"name":"Printed Kurti",
+"price":"999",
+"category":"Kurtis",
+"image":"imagess/kurti2.jpg",
+"description":"Stylish printed kurti"
+},
+{
+"name":"Designer Kurti",
+"price":"1199",
+"category":"Kurtis",
+"image":"imagess/kurti3.jpg",
+"description":"Designer kurti with elegant look"
+},
+{
+"name":"Festive Kurti",
+"price":"1299",
+"category":"Kurtis",
+"image":"imagess/kurti4.jpg",
+"description":"Festive wear kurti for celebrations"
+},
+
+{
+"name":"Floral Cord Set",
+"price":"1799",
+"category":"Cord Sets",
+"image":"imagess/CSCS/CSCS1.jpeg",
+"description":"Stylish floral coordinated cord set"
+},
+{
+"name":"Printed Cord Set",
+"price":"1699",
+"category":"Cord Sets",
+"image":"imagess/CSCS/CSCS2.jpeg",
+"description":"Trendy printed cord set"
+},
+{
+"name":"Elegant Cord Set",
+"price":"1899",
+"category":"Cord Sets",
+"image":"imagess/CSCS/CSCS3.jpeg",
+"description":"Elegant cord set with modern style"
+},
+{
+"name":"Casual Cord Set",
+"price":"1599",
+"category":"Cord Sets",
+"image":"imagess/CSCS/CSCS4.jpeg",
+"description":"Comfortable casual cord set"
+}
 ]
