@@ -3,120 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sarees - Shubharambh</title>
+<title>Lehengas - Shubharambh</title>
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
 <!-- Back Button -->
-<a href="javascript:history.back()" class="back-btn">
-    ← Back
-</a>
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+
 <header></header>
 
 <section class="category-page lehenga-page">
 <h2>Lehengas Collection</h2>
 
-<div class="products">
-
-<div class="card">
-    <img src="imagess/LL/LLL1.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/LL/LLL2.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/LL/LLL3.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/LL/LLL4.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/LL/LLL5.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/LL/LLL6.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/LL/LLL7.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/LL/LLL8.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/LL/LLL9.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/LL/LLL10.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/LL/LLL11.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/LL/LLL12.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-</div>
+<div id="product-list" class="products"></div>
 
 </section>
+
 <a href="favorites.html" id="fav-panel">
     <h3>❤️ Favorites</h3>
     <div id="fav-items"></div>
 </a>
+
 <footer>
 <p>© 2026 Shubharambh</p>
 </footer>
+
 <script>
-const favButtons = document.querySelectorAll(".fav-btn");
 const favContainer = document.getElementById("fav-items");
-
-// Load saved favorites
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-renderFavorites();
-
-favButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-        const imgSrc = btn.previousElementSibling.src;
-
-        if (favorites.includes(imgSrc)) {
-            favorites = favorites.filter(item => item !== imgSrc);
-            btn.classList.remove("active");
-            btn.textContent = "♡";
-        } else {
-            favorites.push(imgSrc);
-            btn.classList.add("active");
-            btn.textContent = "❤️";
-        }
-
-        localStorage.setItem("favorites", JSON.stringify(favorites));
-        renderFavorites();
-    });
-});
 
 function renderFavorites() {
     favContainer.innerHTML = "";
@@ -126,6 +44,63 @@ function renderFavorites() {
         favContainer.appendChild(img);
     });
 }
+
+function updateFavoriteButtons() {
+    document.querySelectorAll(".fav-btn").forEach(btn => {
+        const imgSrc = btn.previousElementSibling.src;
+
+        if (favorites.includes(imgSrc)) {
+            btn.classList.add("active");
+            btn.textContent = "❤️";
+        } else {
+            btn.classList.remove("active");
+            btn.textContent = "♡";
+        }
+
+        btn.addEventListener("click", () => {
+            if (favorites.includes(imgSrc)) {
+                favorites = favorites.filter(item => item !== imgSrc);
+                btn.classList.remove("active");
+                btn.textContent = "♡";
+            } else {
+                favorites.push(imgSrc);
+                btn.classList.add("active");
+                btn.textContent = "❤️";
+            }
+
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+            renderFavorites();
+        });
+    });
+}
+
+fetch("data/products.json")
+.then(response => response.json())
+.then(products => {
+    const container = document.getElementById("product-list");
+
+    const lehengas = products.filter(product => product.category === "Lehengas");
+
+    lehengas.forEach(product => {
+        const card = document.createElement("div");
+        card.className = "card";
+
+        card.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <span class="fav-btn">♡</span>
+            <h3>${product.name}</h3>
+            <p>₹${product.price}</p>
+            <p>${product.description}</p>
+        `;
+
+        container.appendChild(card);
+    });
+
+    updateFavoriteButtons();
+    renderFavorites();
+})
+.catch(error => console.error("Error loading lehengas:", error));
 </script>
+
 </body>
 </html>
