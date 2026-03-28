@@ -106,10 +106,6 @@
     "category": "Lehengas",
     "image": "images/LL/LLL3.jpeg"
   },
-  {
-    "category": "Lehengas",
-    "image": "images/LL/LLL4.jpeg"
-  },
 
   {
     "category": "Anarkalis",
@@ -118,31 +114,6 @@
   {
     "category": "Anarkalis",
     "image": "images/AKAK/AKAK2.jpeg"
-  },
-  {
-    "category": "Anarkalis",
-    "image": "images/AKAK/AKAK3.jpeg"
-  },
-  {
-    "category": "Anarkalis",
-    "image": "images/AKAK/AKAK4.jpeg"
-  },
-
-  {
-    "category": "Kurtis",
-    "image": "images/kurti1.jpg"
-  },
-  {
-    "category": "Kurtis",
-    "image": "images/kurti2.jpg"
-  },
-  {
-    "category": "Kurtis",
-    "image": "images/kurti3.jpg"
-  },
-  {
-    "category": "Kurtis",
-    "image": "images/kurti4.jpg"
   },
 
   {
