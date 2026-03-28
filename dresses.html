@@ -3,183 +3,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sarees - Shubharambh</title>
+<title>Dresses - Shubharambh</title>
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
 <!-- Back Button -->
-<a href="javascript:history.back()" class="back-btn">
-    ← Back
-</a>
+<a href="javascript:history.back()" class="back-btn">← Back</a>
+
 <header></header>
 
 <section class="category-page dress-page">
+
 <h2>Dresses Collection</h2>
 
-<div class="products">
-
-<div class="card">
-    <img src="imagess/DD/DDD1.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/DD/DDD2.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/DD/DDD3.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/DD/DDD4.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/DD/DDD5.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/DD/DDD6.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/DD/DDD7.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/DD/DDD8.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/DD/DDD9.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/DD/DDD10.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/DD/DDD11.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/DD/DDD12.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-<div class="card">
-    <img src="imagess/DD/DDD13.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/DD/DDD14.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/DD/DDD15.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/DD/DDD16.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/DD/DDD17.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/DD/DDD18.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/DD/DDD19.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/DD/DDD20.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/DD/DDD21.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/DD/DDD22.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-<div class="card">
-    <img src="imagess/DD/DDD23.jpeg">
-    <span class="fav-btn">♡</span>
-</div>
-
-</div>
+<div id="product-list" class="products"></div>
 
 </section>
+
 <a href="favorites.html" id="fav-panel">
-    <h3>❤️ Favorites</h3>
-    <div id="fav-items"></div>
+<h3>❤️ Favorites</h3>
+<div id="fav-items"></div>
 </a>
+
 <footer>
 <p>© 2026 Shubharambh</p>
 </footer>
+
 <script>
-const favButtons = document.querySelectorAll(".fav-btn");
+
 const favContainer = document.getElementById("fav-items");
-
-// Load saved favorites
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-renderFavorites();
 
-favButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-        const imgSrc = btn.previousElementSibling.src;
-
-        if (favorites.includes(imgSrc)) {
-            favorites = favorites.filter(item => item !== imgSrc);
-            btn.classList.remove("active");
-            btn.textContent = "♡";
-        } else {
-            favorites.push(imgSrc);
-            btn.classList.add("active");
-            btn.textContent = "❤️";
-        }
-
-        localStorage.setItem("favorites", JSON.stringify(favorites));
-        renderFavorites();
-    });
-});
-
-function renderFavorites() {
+function renderFavorites(){
     favContainer.innerHTML = "";
-    favorites.forEach(src => {
+    favorites.forEach(src=>{
         const img = document.createElement("img");
         img.src = src;
         favContainer.appendChild(img);
     });
 }
+
+function updateFavoriteButtons(){
+
+document.querySelectorAll(".fav-btn").forEach(btn=>{
+
+const imgSrc = btn.previousElementSibling.src;
+
+if(favorites.includes(imgSrc)){
+    btn.classList.add("active");
+    btn.textContent="❤️";
+}else{
+    btn.classList.remove("active");
+    btn.textContent="♡";
+}
+
+btn.addEventListener("click",()=>{
+
+if(favorites.includes(imgSrc)){
+    favorites = favorites.filter(item=>item!==imgSrc);
+    btn.classList.remove("active");
+    btn.textContent="♡";
+}else{
+    favorites.push(imgSrc);
+    btn.classList.add("active");
+    btn.textContent="❤️";
+}
+
+localStorage.setItem("favorites",JSON.stringify(favorites));
+renderFavorites();
+
+});
+
+});
+
+}
+
+fetch("data/products.json")
+.then(response=>response.json())
+.then(products=>{
+
+const container=document.getElementById("product-list");
+
+const dresses = products.filter(product=>product.category==="Dresses");
+
+dresses.forEach(product=>{
+
+const card=document.createElement("div");
+card.className="card";
+
+card.innerHTML=`
+<img src="${product.image}" alt="${product.name}">
+<span class="fav-btn">♡</span>
+<h3>${product.name}</h3>
+<p>₹${product.price}</p>
+<p>${product.description}</p>
+`;
+
+container.appendChild(card);
+
+});
+
+updateFavoriteButtons();
+renderFavorites();
+
+})
+.catch(error=>console.error("Error loading dresses:",error));
+
 </script>
+
 </body>
 </html>
