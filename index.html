@@ -70,11 +70,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     fetch("./data/products.json")
         .then(response => response.json())
-        .then(data => {
-            const products = data.products || [];
+        .then(products => {
             gallery.innerHTML = "";
 
-            products.forEach(product => {A
+            products.forEach(product => {
                 const img = document.createElement("img");
                 img.src = product.image;
                 img.alt = "Shubharambh clothing";
@@ -84,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(error => console.error("Error loading gallery:", error));
 });
 </script>
+
 <script>
 if (window.netlifyIdentity) {
     window.netlifyIdentity.on("init", user => {
