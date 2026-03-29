@@ -1,6 +1,6 @@
 const SHEET_ID = "PASTE_YOUR_SHEET_ID";
 const SHEET_NAME = "Sheet1";
-const FOLDER_ID = "PASTE_YOUR_DRIVE_FOLDER_ID";
+const FOLDER_ID = "1cKVhx58ecsl72jlmKHYBvdQ-tuLSzb2F";
 
 function doGet() {
   return HtmlService.createHtmlOutputFromFile("Index")
