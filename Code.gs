@@ -8,6 +8,7 @@ function doGet() {
 }
 
 function uploadProduct(formObject) {
+
   const sheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName(SHEET_NAME);
   const folder = DriveApp.getFolderById(FOLDER_ID);
 
@@ -15,19 +16,20 @@ function uploadProduct(formObject) {
   const category = formObject.category;
 
   if (!fileBlob || !category) {
-    throw new Error("Category and image are required.");
+    throw new Error("Category and image required");
   }
 
-  const uploadedFile = folder.createFile(fileBlob);
-  uploadedFile.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+  const file = folder.createFile(fileBlob);
 
-  const imageUrl = "https://drive.google.com/uc?export=view&id=" + uploadedFile.getId();
+  file.setSharing(
+    DriveApp.Access.ANYONE_WITH_LINK,
+    DriveApp.Permission.VIEW
+  );
+
+  const imageUrl =
+    "https://drive.google.com/uc?export=view&id=" + file.getId();
 
   sheet.appendRow([category, imageUrl]);
 
-  return {
-    success: true,
-    image: imageUrl,
-    category: category
-  };
+  return { success: true };
 }
