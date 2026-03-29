@@ -1,135 +1,32 @@
-[
-
-
-  {
-    "category": "Dresses",
-    "image": "images/DD/DDD1.jpeg"
-  },
-  {
-    "category": "Dresses",
-    "image": "images/DD/DDD2.jpeg"
-  },
-  {
-    "category": "Dresses",
-    "image": "images/DD/DDD3.jpeg"
-  },
-  {
-    "category": "Dresses",
-    "image": "images/DD/DDD4.jpeg"
-  },
-  {
-    "category": "Dresses",
-    "image": "images/DD/DDD5.jpeg"
-  },
-  {
-    "category": "Dresses",
-    "image": "images/DD/DDD6.jpeg"
-  },
-  {
-    "category": "Dresses",
-    "image": "images/DD/DDD7.jpeg"
-  },
+{
+  "products": [
     {
-    "category": "Dresses",
-    "image": "images/DD/DDD8.jpeg"
-  },
-  {
-    "category": "Dresses",
-    "image": "images/DD/DDD9.jpeg"
-  },
-  {
-    "category": "Dresses",
-    "image": "images/DD/DDD10.jpeg"
-  },
-  {
-    "category": "Dresses",
-    "image": "images/DD/DDD11.jpeg"
-  },
+      "category": "Dresses",
+      "image": "images/DD/DDD1.jpeg"
+    },
     {
-    "category": "Dresses",
-    "image": "images/DD/DDD12.jpeg"
-  },
-  {
-    "category": "Dresses",
-    "image": "images/DD/DDD13.jpeg"
-  },
-  {
-    "category": "Dresses",
-    "image": "images/DD/DDD14.jpeg"
-  },
-  {
-    "category": "Dresses",
-    "image": "images/DD/DDD15.jpeg"
-  },
+      "category": "Dresses",
+      "image": "images/DD/DDD2.jpeg"
+    },
     {
-    "category": "Dresses",
-    "image": "images/DD/DDD16.jpeg"
-  },
-  {
-    "category": "Dresses",
-    "image": "images/DD/DDD17.jpeg"
-  },
-  {
-    "category": "Dresses",
-    "image": "images/DD/DDD18.jpeg"
-  },
-  {
-    "category": "Dresses",
-    "image": "images/DD/DDD19.jpeg"
-  },
+      "category": "Dresses",
+      "image": "images/DD/DDD3.jpeg"
+    },
     {
-    "category": "Dresses",
-    "image": "images/DD/DDD20.jpeg"
-  },
-  {
-    "category": "Dresses",
-    "image": "images/DD/DDD21.jpeg"
-  },
-  {
-    "category": "Dresses",
-    "image": "images/DD/DDD22.jpeg"
-  },
+      "category": "Dresses",
+      "image": "images/DD/DDD4.jpeg"
+    },
     {
-    "category": "Dresses",
-    "image": "images/DD/DDD23.jpeg"
-  },
-
-  {
-    "category": "Lehengas",
-    "image": "images/LL/LLL1.jpeg"
-  },
-  {
-    "category": "Lehengas",
-    "image": "images/LL/LLL2.jpeg"
-  },
-  {
-    "category": "Lehengas",
-    "image": "images/LL/LLL3.jpeg"
-  },
-
-  {
-    "category": "Anarkalis",
-    "image": "images/AKAK/AKAK1.jpeg"
-  },
-  {
-    "category": "Anarkalis",
-    "image": "images/AKAK/AKAK2.jpeg"
-  },
-
-  {
-    "category": "Cord Sets",
-    "image": "images/CSCS/CSCS1.jpeg"
-  },
-  {
-    "category": "Cord Sets",
-    "image": "images/CSCS/CSCS2.jpeg"
-  },
-  {
-    "category": "Cord Sets",
-    "image": "images/CSCS/CSCS3.jpeg"
-  },
-  {
-    "category": "Cord Sets",
-    "image": "images/CSCS/CSCS4.jpeg"
-  }
-]
+      "category": "Lehengas",
+      "image": "images/LL/LLL1.jpeg"
+    },
+    {
+      "category": "Anarkalis",
+      "image": "images/AKAK/AKAK1.jpeg"
+    },
+    {
+      "category": "Cord Sets",
+      "image": "images/CSCS/CSCS1.jpeg"
+    }
+  ]
+}
