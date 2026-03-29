@@ -65,45 +65,35 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+    const gallery = document.getElementById("gallery-grid");
+    if (!gallery) return;
 
-const gallery = document.getElementById("gallery-grid");
-if (!gallery) return;
+    fetch("./data/products.json")
+        .then(response => response.json())
+        .then(data => {
+            const products = data.products || [];
+            gallery.innerHTML = "";
 
-Promise.all([
-    fetch("./data/products.json").then(res => res.json()),
-    fetch("https://opensheet.elk.sh/1tqtcnytSETLYua1DSFey3ZJSwyAwyZG8zM5RaLLYM60/Sheet1")
-        .then(res => res.json())
-        .catch(() => []) // prevents site break if sheet fails
-])
-
-.then(([localData, sheetData]) => {
-
-gallery.innerHTML = "";
-
-/* products.json may have two formats
-   so we normalize it */
-const localProducts = localData.products || localData || [];
-
-/* merge both sources */
-const allProducts = [...localProducts, ...sheetData];
-
-allProducts.forEach(product => {
-
-if (!product.image) return;
-
-const img = document.createElement("img");
-img.src = product.image;
-img.alt = "Shubharambh clothing";
-
-gallery.appendChild(img);
-
+            products.forEach(product => {A
+                const img = document.createElement("img");
+                img.src = product.image;
+                img.alt = "Shubharambh clothing";
+                gallery.appendChild(img);
+            });
+        })
+        .catch(error => console.error("Error loading gallery:", error));
 });
-
-})
-
-.catch(error => console.error("Error loading gallery:", error));
-
-});
+</script>
+<script>
+if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+        if (!user) {
+            window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+            });
+        }
+    });
+}
 </script>
 
 </body>
