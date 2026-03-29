@@ -73,11 +73,13 @@
       });
     }
 
-    fetch('data/products.json')
-      .then(response => response.json())
-      .then(products => {
-        const container = document.getElementById('product-list');
-        const sarees = products.filter(product => product.category === 'Sarees');
+    fetch("data/products.json")
+    .then(response => response.json())
+    .then(data => {
+        const products = data.products || [];
+      const container = document.getElementById("product-list");
+      container.innerHTML = "";
+          const sarees = products.filter(product => product.category === 'Sarees');
 
         sarees.forEach(product => {
           const card = document.createElement('div');
