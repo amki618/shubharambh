@@ -11,13 +11,13 @@ collections:
     files:
       - file: "data/products.json"
         label: "Products List"
-        name: "products"
+        name: "products_file"
         format: "json"
         editor:
           preview: false
         fields:
           - label: "Products"
-            name: ""
+            name: "products"
             widget: "list"
             summary: "{{fields.category}}"
             fields:
