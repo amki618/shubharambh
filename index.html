@@ -70,7 +70,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     fetch("./data/products.json")
         .then(response => response.json())
-        .then(products => {
+        .then(data => {
+            const products = data.products || [];
             gallery.innerHTML = "";
 
             products.forEach(product => {
@@ -83,7 +84,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(error => console.error("Error loading gallery:", error));
 });
 </script>
-
 <script>
 if (window.netlifyIdentity) {
     window.netlifyIdentity.on("init", user => {
