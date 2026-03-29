@@ -71,7 +71,7 @@ if (!gallery) return;
 
 Promise.all([
     fetch("./data/products.json").then(res => res.json()),
-    fetch("https://opensheet.elk.sh/YOUR_SHEET_ID/Sheet1")
+    fetch("https://opensheet.elk.sh/1tqtcnytSETLYua1DSFey3ZJSwyAwyZG8zM5RaLLYM60/Sheet1")
         .then(res => res.json())
         .catch(() => []) // prevents site break if sheet fails
 ])
