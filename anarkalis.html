@@ -83,10 +83,11 @@ renderFavorites();
 }
 
 fetch("data/products.json")
-.then(response=>response.json())
-.then(products=>{
-
-const container=document.getElementById("product-list");
+.then(response => response.json())
+.then(data => {
+    const products = data.products || [];
+    const container = document.getElementById("product-list");
+    container.innerHTML = "";
 
 const anarkalis = products.filter(product=>product.category==="Anarkalis");
 
