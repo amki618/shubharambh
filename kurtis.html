@@ -74,8 +74,10 @@ function updateFavoriteButtons() {
 
 fetch("data/products.json")
 .then(response => response.json())
-.then(products => {
+.then(data => {
+    const products = data.products || [];
     const container = document.getElementById("product-list");
+    container.innerHTML = "";
 
     const kurtis = products.filter(product => product.category === "Kurtis");
 
